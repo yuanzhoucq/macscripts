@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import sys
 from subprocess import call
 
 
@@ -9,5 +10,4 @@ def post_notification(title, msg):
 
 
 if __name__ == '__main__':
-    import sys
     post_notification(sys.argv[1], sys.argv[2])

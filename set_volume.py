@@ -1,5 +1,7 @@
 #!/usr/bin/python
+import sys
 from subprocess import call, check_output
+from notify import post_notification
 
 
 def set_volume(volume):
@@ -15,11 +17,9 @@ def set_volume(volume):
 
 
 def set_volume_with_notification(volume):
-    from notify import post_notification
     if set_volume(volume):
         post_notification("Setting volume - " + volume, "Mac volume has been set to " + volume)
 
 
 if __name__ == '__main__':
-    import sys
     set_volume_with_notification(sys.argv[1])
